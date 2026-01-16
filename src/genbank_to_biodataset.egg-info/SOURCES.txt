@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/genbank_to_biodataset/__init__.py
+src/genbank_to_biodataset/cache.py
+src/genbank_to_biodataset/cli.py
+src/genbank_to_biodataset/exporter.py
+src/genbank_to_biodataset/featurizer.py
+src/genbank_to_biodataset/ncbi_client.py
+src/genbank_to_biodataset/pipeline.py
+src/genbank_to_biodataset.egg-info/PKG-INFO
+src/genbank_to_biodataset.egg-info/SOURCES.txt
+src/genbank_to_biodataset.egg-info/dependency_links.txt
+src/genbank_to_biodataset.egg-info/entry_points.txt
+src/genbank_to_biodataset.egg-info/requires.txt
+src/genbank_to_biodataset.egg-info/top_level.txt

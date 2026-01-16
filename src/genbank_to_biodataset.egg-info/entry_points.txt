@@ -1,0 +1,2 @@
+[console_scripts]
+genbank2bio = genbank_to_biodataset.cli:main

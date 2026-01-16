@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: genbank-to-biodataset
+Version: 0.1.0
+Summary: CLI pipeline to turn GenBank queries into ML-ready datasets.
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.31
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pandas>=2.1
+
+# GenBank to BioDataset
+
+Outil en ligne de commande permettant de récupérer des séquences GenBank via les E-utilities NCBI, de les nettoyer puis d'exporter un jeu de données directement exploitable pour l'entraînement de modèles.
+
+## Installation (Windows 10/11)
+
+```powershell
+cd genbank-to-biodataset
+py -3.10 -m venv .venv
+.\.venv\Scripts\activate
+pip install --upgrade pip
+pip install -e .
+```
+
+## Configuration
+
+1. Copier `config/example.yaml` vers `config/config.yaml`.
+2. Renseigner au minimum votre email NCBI (`email`) et un identifiant d'outil (`tool`).  
+   `api_key` est optionnel mais recommandé pour augmenter les quotas.
+
+## Exemple d'exécution
+
+```powershell
+genbank2bio run --query "Mammuthus primigenius[Organism] AND mitochondrion[Filter] AND complete genome" --limit 20
+```
+
+La commande applique automatiquement le rate-limit défini dans la configuration (0,35 s par défaut) et réutilise le cache local pour éviter de revérifier les mêmes requêtes.
+
+## Résultats
+
+Les export sont écrits dans `data/processed/` (ou le dossier `out_dir` fourni dans la config) :
+
+- `sequences.fasta` : séquences FASTA nettoyées (A/C/G/T/N uniquement).
+- `features.csv` : tableau de caractéristiques (longueur, %GC, comptages A/C/G/T/N).
+- `metadata.jsonl` : métadonnées des records (accession, header, longueur).
+
+Un résumé affiche également le nombre d'IDs retournés, de records exportés et les chemins exacts des fichiers générés.

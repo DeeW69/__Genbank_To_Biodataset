@@ -1,0 +1,6 @@
+email: "your.email@example.com"
+tool: "genbank2bio-cli"
+api_key: ""
+rate_limit_sec: 0.35
+out_dir: "data/processed"
+cache_dir: "data/cache"
