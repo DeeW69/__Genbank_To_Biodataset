@@ -1,6 +1,0 @@
-email: "sebsociallife@gmail.com"
-tool: "genbank2bio-cli"
-api_key: "b27b6207eadb2b25d703ab044ee1d1945808"
-rate_limit_sec: 0.35
-out_dir: "data/processed"
-cache_dir: "data/cache"
