@@ -1,3 +1,5 @@
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 # GenBank-to-BioDataset  
 Pipeline de data engineering + bioinformatique pour produire des datasets ML-ready à partir de NCBI GenBank.
 
